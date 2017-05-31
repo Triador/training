@@ -13,6 +13,12 @@ public class Main {
         Window window = new Window("Window", 960, 640);
         window.addLayer(new Example("Layer-1", Color.BLUE));
         window.addLayer(new Example("Layer-2", Color.RED));
+        window.addLayer(new Example("Layer-3", Color.BLACK));
+        window.addLayer(new Example("Layer-4", Color.GREEN));
+        window.addLayer(new Example("Layer-5", Color.GRAY));
+        window.addLayer(new Example("Layer-6", Color.DARK_GRAY));
+        window.addLayer(new Example("Layer-7", Color.CYAN));
+        window.addLayer(new Example("Layer-8", Color.PINK));
     }
 
 }
