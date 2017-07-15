@@ -1,4 +1,4 @@
-package com.triador.main;
+package com.triador.algorithms;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class SortON {
         int n = Integer.parseInt(reader.readLine());
 
         int[] aTemp = new int[MAX];
-        int a[] = new int[n];
+        int[] a = new int[n];
         for (int i = 0; i < n; i++) {
             a[i] = (int) (Math.random() * MAX);
         }
@@ -24,9 +24,9 @@ public class SortON {
             aTemp[a[i]]++;
 
         for (int i = 0; i < n; i++) {
-                for (int j = 0; j < aTemp[i]; j++) {
-                    System.out.print(i + " ");
-                }
+            for (int j = 0; j < aTemp[i]; j++) {
+                System.out.print(i + " ");
+            }
         }
     }
 }

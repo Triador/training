@@ -5,53 +5,53 @@ package com.triador.algorithms;
  */
 public class Sorts {
 
-    public static int[] bubbleSort(int[] a) {
-        boolean swapped = true;
-        int j = 0;
-        int length = a.length;
-        while (swapped) {
-            swapped = false;
-            j++;
-            for (int i = 0; i < length - j; i++) {
-                if (a[i] > a[i + 1]) {
-                    int tmp = a[i];
-                    a[i] = a[i + 1];
-                    a[i + 1] = tmp;
-                    swapped = true;
+    public static int[] bubbleSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j - 1] > array[j]) {
+                    int temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
                 }
             }
         }
-        return a;
+        return array;
     }
 
-    public static int[] selectionSort(int[] a) {
-        int length = a.length;
-        for (int i = 0; i < length - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < length; j++) {
-                if (a[j] < a[minIndex]) {
-                    minIndex = j;
+    public static int[] selectionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int min = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[min]) {
+                    min = j;
                 }
             }
-            if (minIndex != i) {
-                int tmp = a[i];
-                a[i] = a[minIndex];
-                a[minIndex] = tmp;
+            if (min != i) {
+                int temp = array[i];
+                array[i] = array[min];
+                array[min] = temp;
             }
         }
-        return a;
+        return array;
     }
 
-    public static int[] insertionSort(int[] a) {
-        int length = a.length;
-        for (int i = 0; i < length; i++) {
-            for (int j = i; j > 0 && a[j] < a[j - 1]; j--) {
-                int temp = a[j];
-                a[j] = a[j - 1];
-                a[j - 1] = temp;
+    public static int[] insertionSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i; j >= 0 && array[j + 1] < array[j]; j--) {
+                int temp = array[j + 1];
+                array[j + 1] = array[j];
+                array[j] = temp;
             }
         }
-        return a;
+        return array;
+    }
+
+    public static int[] ONSort(int[] array, int n) {
+        final int MAX = n;
+        int[] aTemp = new int[MAX];
+        for (int i = 0; i < array.length; i++)
+            aTemp[array[i]]++;
+        return aTemp;
     }
 
 }
