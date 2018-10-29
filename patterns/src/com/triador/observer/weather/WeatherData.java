@@ -1,22 +1,23 @@
 package com.triador.observer.weather;
 
 import java.util.*;
+import java.util.Observer;
 
 public class WeatherData implements Subject {
-    private ArrayList<Observer> observers;
+    private ArrayList<MyObserver> observers;
     private float temperature;
     private float humidity;
     private float pressure;
 
     public WeatherData() {
-        observers = new ArrayList<Observer>();
+        observers = new ArrayList<>();
     }
 
-    public void registerObserver(Observer o) {
+    public void registerObserver(MyObserver o) {
         observers.add(o);
     }
 
-    public void removeObserver(Observer o) {
+    public void removeObserver(MyObserver o) {
         int i = observers.indexOf(o);
         if (i >= 0) {
             observers.remove(i);
@@ -24,7 +25,7 @@ public class WeatherData implements Subject {
     }
 
     public void notifyObservers() {
-        for (Observer observer : observers) {
+        for (MyObserver observer : observers) {
             observer.update(temperature, humidity, pressure);
         }
     }

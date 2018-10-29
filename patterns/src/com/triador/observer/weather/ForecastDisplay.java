@@ -1,6 +1,6 @@
 package com.triador.observer.weather;
 
-public class ForecastDisplay implements Observer, DisplayElement {
+public class ForecastDisplay implements MyObserver, DisplayElement {
     private float currentPressure = 29.92f;
     private float lastPressure;
     private WeatherData weatherData;

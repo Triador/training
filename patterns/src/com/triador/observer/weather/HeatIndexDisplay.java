@@ -1,6 +1,6 @@
 package com.triador.observer.weather;
 
-public class HeatIndexDisplay implements Observer, DisplayElement {
+public class HeatIndexDisplay implements MyObserver, DisplayElement {
     float heatIndex = 0.0f;
     private WeatherData weatherData;
 
